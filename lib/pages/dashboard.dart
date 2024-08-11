@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 
-// import 'dashboard.dart';
-
-
-class AboutPage extends StatelessWidget {
-  const AboutPage({super.key});
+class Dashboard extends StatelessWidget {
+  const Dashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('About Page'),
-        titleTextStyle: const TextStyle(
+        title: Text('Dashboard'),
+        titleTextStyle: TextStyle(
             color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 30),
       ),
       body: Center(
@@ -20,9 +17,9 @@ class AboutPage extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/dashboard');
+                  Navigator.popUntil(context, ModalRoute.withName('/'));
                 },
-                child: const Text('Dashboard')),
+                child: Text('pop untill')),
           ],
         ),
       ),

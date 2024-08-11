@@ -18,14 +18,7 @@ class HomePage extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (ctx) {
-                        return AboutPage();
-                      },
-                    ),
-                  );
+                  Navigator.pushNamed(context, '/about');
                 },
                 child: Text('About Page')),
           ],
