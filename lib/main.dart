@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import '../pages/about_page.dart';
-import '../pages/dashboard.dart';
-import '../pages/home_page.dart';
-
+import 'package:flutter_navigation_route/routes/route_pages.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,14 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      routes: {
-        '/' : (context) => const HomePage(),
-        '/about' :  (context) => const AboutPage(),
-        '/dashboard' : (context) => const Dashboard(),
-      },
-      initialRoute: '/',
+      routerConfig: RoutePages.router,
     );
   }
 }

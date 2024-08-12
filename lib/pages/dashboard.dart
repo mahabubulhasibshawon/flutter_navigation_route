@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../routes/route_pages.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -7,8 +10,8 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dashboard'),
-        titleTextStyle: TextStyle(
+        title: const Text('Dashboard'),
+        titleTextStyle: const TextStyle(
             color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 30),
       ),
       body: Center(
@@ -17,9 +20,10 @@ class Dashboard extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  Navigator.popUntil(context, ModalRoute.withName('/'));
+                  // Navigator.popUntil(context, ModalRoute.withName('/'));
+                  context.goNamed(Routes.home);
                 },
-                child: Text('pop untill')),
+                child: const Text('pop untill')),
           ],
         ),
       ),

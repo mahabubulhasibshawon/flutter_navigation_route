@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_navigation_route/pages/about_page.dart';
+import 'package:go_router/go_router.dart';
+
+import '../routes/route_pages.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,8 +10,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Page'),
-        titleTextStyle: TextStyle(
+        title: const Text('Home Page'),
+        titleTextStyle: const TextStyle(
             color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 30),
       ),
       body: Center(
@@ -18,9 +20,9 @@ class HomePage extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/about');
+                  context.goNamed(Routes.about);
                 },
-                child: Text('About Page')),
+                child: const Text('About Page')),
           ],
         ),
       ),

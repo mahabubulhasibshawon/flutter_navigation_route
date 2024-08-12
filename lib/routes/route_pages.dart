@@ -6,12 +6,20 @@ import 'package:go_router/go_router.dart';
 part 'routes.dart';
 
 class RoutePages {
-
-  final  router = GoRouter(
+  static final router = GoRouter(
     routes: [
-      GoRoute(path: Routes.home,name: Routes.home, pageBuilder: (context, state)=> MaterialPage(child: HomePage())),
-      GoRoute(path: Routes.about,name: Routes.about, pageBuilder: (context, state)=> MaterialPage(child: AboutPage())),
-      GoRoute(path: Routes.dashboard,name: Routes.dashboard, pageBuilder: (context, state)=> MaterialPage(child: Dashboard())),
+      GoRoute(
+          path: Routes.home,
+          name: Routes.home,
+          pageBuilder: (context, state) => const MaterialPage(child: HomePage())),
+      GoRoute(
+          path: Routes.about,
+          name: Routes.about,
+          pageBuilder: (context, state) => const MaterialPage(child: AboutPage())),
+      GoRoute(
+          path: Routes.dashboard,
+          name: Routes.dashboard,
+          pageBuilder: (context, state) => const MaterialPage(child: Dashboard())),
     ],
   );
 }

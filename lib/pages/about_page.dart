@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../routes/route_pages.dart';
 
 // import 'dashboard.dart';
 
@@ -20,7 +23,7 @@ class AboutPage extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/dashboard');
+                  context.goNamed(Routes.dashboard);
                 },
                 child: const Text('Dashboard')),
           ],
