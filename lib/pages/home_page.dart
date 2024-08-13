@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
-import '../routes/route_pages.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +12,7 @@ class HomePage extends StatelessWidget {
         titleTextStyle: const TextStyle(
             color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 30),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-                onPressed: () => context.goNamed(Routes.about, extra: {'name': 'Test '}),
-                child: const Text('About Page')),
-          ],
-        ),
-      ),
+      body: Container(),
     );
   }
 }
