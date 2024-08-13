@@ -15,7 +15,8 @@ class RoutePages {
       GoRoute(
           path: Routes.about,
           name: Routes.about,
-          pageBuilder: (context, state) => const MaterialPage(child: AboutPage())),
+          builder: (context, state)=> AboutPage(perameter: state.extra as Map ?? {})),
+          // pageBuilder: (context, state) => const MaterialPage(child: AboutPage())),
       GoRoute(
           path: Routes.dashboard,
           name: Routes.dashboard,

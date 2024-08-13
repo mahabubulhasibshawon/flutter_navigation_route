@@ -7,7 +7,9 @@ import '../routes/route_pages.dart';
 
 
 class AboutPage extends StatelessWidget {
-  const AboutPage({super.key});
+  const AboutPage({super.key, required this.perameter});
+
+  final Map perameter;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +23,7 @@ class AboutPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(perameter['name'].toString(), style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
             ElevatedButton(
                 onPressed: () {
                   context.goNamed(Routes.dashboard);

@@ -19,9 +19,7 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-                onPressed: () {
-                  context.goNamed(Routes.about);
-                },
+                onPressed: () => context.goNamed(Routes.about, extra: {'name': 'Test '}),
                 child: const Text('About Page')),
           ],
         ),
