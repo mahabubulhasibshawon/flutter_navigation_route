@@ -2,17 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../routes/route_pages.dart';
 
-class PageHolder extends StatelessWidget {
+class PageHolder extends StatefulWidget {
   const PageHolder({super.key, required this.child});
 
   final Widget child;
 
   @override
+  State<PageHolder> createState() => _PageHolderState();
+}
+
+class _PageHolderState extends State<PageHolder> {
+  int activeIndex = 0;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: child,
+      body: widget.child,
       bottomNavigationBar: NavigationBar(
+        selectedIndex: activeIndex,
         onDestinationSelected: (index){
+          setState(() {
+            activeIndex = index;
+          });
           switch(index){
             case 0:
               context.goNamed(Routes.dashboard);
